@@ -8,6 +8,12 @@ import org.junit.jupiter.api.Test;
 class TestPokerStatus {
 	
 	private PokerStatus verificador;
+	private String carta1;
+	private String carta2;
+	private String carta3;
+	private String carta4;
+	private String carta5;
+	
 
 	//Setup
 	@BeforeEach
@@ -17,23 +23,50 @@ class TestPokerStatus {
 
 	@Test
 	void testMazoCon3CartasMismoValor() {
-		//Exercise y Verify
-		assertFalse(verificador.verificar("8d", "8c", "8t", "4c", "kt"));
+		//Exercise 
+		carta1 = "8d";
+		carta2 = "8c";
+		carta3 = "8t";
+		carta4 = "4c";
+		carta5 = "kt";
+		// Verify
+		assertFalse(verificador.verificar(carta1, carta2, carta3, carta4, carta5));
 	}
 	
 	@Test
 	void testMazoConTodasCartasDistintas() {
-		assertFalse(verificador.verificar("8d", "3t", "8p", "4p", "jc"));
+		//Exercise 
+		carta1 = "8d";
+		carta2 = "3t";
+		carta3 = "8p";
+		carta4 = "4p";
+		carta5 = "jc";
+		// Verify
+		assertFalse(verificador.verificar(carta1, carta2, carta3, carta4, carta5));
 	}
 
 	@Test 
 	void testMazoCon2CartasMismoValor() {
-		assertFalse(verificador.verificar("5d", "8d", "10t", "4p", "4t"));
+		//Exercise 
+		carta1 = "5d";
+		carta2 = "8d";
+		carta3 = "10t";
+		carta4 = "4p";
+		carta5 = "4t";
+		// Verify
+		assertFalse(verificador.verificar(carta1, carta2, carta3, carta4, carta5));
 	}
 	
 	@Test
 	void testMazoPoquer() {
-		assert(verificador.verificar("8c", "8d", "8t", "8p", "5d"));
+		//Exercise 
+		carta1 = "8c";
+		carta2 = "8d";
+		carta3 = "8t";
+		carta4 = "8p";
+		carta5 = "5d";
+		// Verify
+		assert(verificador.verificar(carta1, carta2, carta3, carta4, carta5));
 	}
 	
 	@Test
