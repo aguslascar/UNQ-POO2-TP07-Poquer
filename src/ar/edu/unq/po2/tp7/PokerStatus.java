@@ -5,9 +5,8 @@ import java.util.Set;
 
 public class PokerStatus {
 	
-	private Set<String> cartas;
  
-	public String verificar(String carta1, String carta2, String carta3, String carta4, String carta5) {
+	public String verificar(Carta carta1, Carta carta2, Carta carta3, Carta carta4, Carta carta5) {
 		
 		if (this.cantIgualValor(carta1, carta2, carta3, carta4, carta5) == 2) {
 			return "Poker";
@@ -21,34 +20,24 @@ public class PokerStatus {
 		else return null;
 	}
 	
-	private int cantIgualValor(String carta1, String carta2, String carta3, String carta4, String carta5) {
-		String c1 = this.removerPalo(carta1);
-		String c2 = this.removerPalo(carta2);
-		String c3 = this.removerPalo(carta3);
-		String c4 = this.removerPalo(carta4);
-		String c5 = this.removerPalo(carta5);
-		cartas = new HashSet<String>();
-		cartas.add(c1);
-		cartas.add(c2);
-		cartas.add(c3);
-		cartas.add(c4);
-		cartas.add(c5);
+	private int cantIgualValor(Carta carta1, Carta carta2, Carta carta3, Carta carta4, Carta carta5) {
+		Set<Integer> cartas = new HashSet<Integer>();
+		cartas.add(carta1.valor());
+		cartas.add(carta2.valor());
+		cartas.add(carta3.valor());
+		cartas.add(carta4.valor());
+		cartas.add(carta5.valor());
 		return cartas.size();
 	}
 
 	
-	private boolean tienenMismoPalo(String carta1, String carta2, String carta3, String carta4, String carta5) {
-		String c1 = this.removerValor(carta1);
-		String c2 = this.removerValor(carta2);
-		String c3 = this.removerValor(carta3);
-		String c4 = this.removerValor(carta4);
-		String c5 = this.removerValor(carta5);
-		cartas = new HashSet<String>();
-		cartas.add(c1);
-		cartas.add(c2);
-		cartas.add(c3);
-		cartas.add(c4);
-		cartas.add(c5);
+	private boolean tienenMismoPalo(Carta carta1, Carta carta2, Carta carta3, Carta carta4, Carta carta5) {
+		Set<String> cartas = new HashSet<String>();
+		cartas.add(carta1.palo());
+		cartas.add(carta2.palo());
+		cartas.add(carta3.palo());
+		cartas.add(carta4.palo());
+		cartas.add(carta5.palo());
 		return cartas.size() == 1;
 	}
 	
