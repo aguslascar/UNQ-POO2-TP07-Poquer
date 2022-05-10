@@ -1,5 +1,8 @@
 package ar.edu.unq.po2.tp7;
 
+
+/* ----------- OBSOLETO ---------------
+ 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -81,3 +84,5 @@ class TestPokerStatus {
 		assertEquals("Color", verificador.verificar(carta1, carta2, carta3, carta4, carta5));
 	}
 }
+
+*/

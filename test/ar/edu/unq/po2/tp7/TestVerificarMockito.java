@@ -1,5 +1,10 @@
 package ar.edu.unq.po2.tp7;
 
+
+/* ----------- OBSOLETO --------------- 
+ 
+ 
+ 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -8,6 +13,8 @@ import org.junit.jupiter.api.Test;
 
 import ar.edu.unq.po2.tp7.Carta;
 
+ 
+ 
 class TestVerificarMockito {
 	
 	PokerStatus verificador;
@@ -58,3 +65,4 @@ class TestVerificarMockito {
 	}
 
 }
+*/
